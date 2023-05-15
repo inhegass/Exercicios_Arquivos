@@ -2,6 +2,10 @@
 
 int main(void) {
 	FILE* b = fopen("repetido.txt", "r");
+	if (a == NULL) {
+		printf("Erro na abertura do arquivo.\n");
+		exit(1);
+	}
 	int nrep = 0;
 	char l1, l2;
 	fscanf(b, "%c", &l1);
