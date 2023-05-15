@@ -6,7 +6,7 @@ int main(void) {
 		printf("Erro na abertura do arquivo.\n");
 		exit(1);
 	}
-	int nlinhas = 0;
+	int nlinhas = 1;
 	char l;
 	while (fscanf(a, "%c", &l) != EOF) {
 		if (l == '\n') {
