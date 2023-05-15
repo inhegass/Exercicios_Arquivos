@@ -11,4 +11,5 @@ int main(void) {
 		}
 	}
 	printf("Esse arquivo repete a letra %c %d vezes.\n", l1, nrep);
+	fclose(b);
 }
