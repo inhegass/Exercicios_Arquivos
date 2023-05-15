@@ -2,7 +2,7 @@
 
 int main(void) {
 	FILE* b = fopen("repetido.txt", "r");
-	if (a == NULL) {
+	if (b == NULL) {
 		printf("Erro na abertura do arquivo.\n");
 		exit(1);
 	}
