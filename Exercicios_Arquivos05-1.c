@@ -3,7 +3,7 @@
 
 char criptografar(char a) {
 	char b;
-	if (a != EOF && a != '\n') {
+	if (a != '\n') {
 		b = a + 3;
 	}
 	else {
@@ -27,11 +27,17 @@ int main(void) {
 		printf("Erro na abertura do arquivo.\n");
 		exit(1);
 	}
-	while (fscanf(d, "%c", &(norm[n])) != EOF) {
+	
+	
+	//if();
+	while (fscanf(d, "%c", &norm[n])==1) {
+		fscanf(d, "%c", &norm[n]);
+		
+		
 		crip[n] = criptografar(norm[n]);
-		n++;
 		fprintf(f, "%c", crip[n]);
-	 }
+		n++;	
+	}
 	printf("Arquivo criptografado.\n");
 	fclose(d);
 	fclose(f);
