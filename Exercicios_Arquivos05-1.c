@@ -12,29 +12,29 @@ char criptografar(char a) {
 	return b;
 }
 
+
 int main(void) {
 	int n = 0;
 	char norm[70];
 	char crip[70];
-	FILE* h = fopen("criptografar.txt", "r");
-	if (h == NULL) {
+	FILE* d = fopen("criptografar.txt", "r");
+	if (d == NULL) {
 		printf("Erro na abertura do arquivo.\n");
 		exit(1);
 	}
-	FILE* i = fopen("criptografado.txt", "w");
-	if (i == NULL) {
+	FILE* f = fopen("criptografado.txt", "w");
+	if (f == NULL) {
 		printf("Erro na abertura do arquivo.\n");
 		exit(1);
 	}
-	//if();
-	while (fscanf(h, "%c", &norm[n])==1) {
-		fscanf(h, "%c", &norm[n]);
+	while (!feof(d)) {
+		fscanf(d, "%c", &norm[n]);
 		crip[n] = criptografar(norm[n]);
-		fprintf(i, "%c", crip[n]);
+		fprintf(f, "%c", crip[n]);
 		n++;	
 	}
 	printf("Arquivo criptografado.\n");
-	fclose(h);
-	fclose(i);
+	fclose(d);
+	fclose(f);
 	return 0;
 }
