@@ -12,7 +12,6 @@ char criptografar(char a) {
 	return b;
 }
 
-
 int main(void) {
 	int n = 0;
 	char norm[70];
@@ -27,13 +26,9 @@ int main(void) {
 		printf("Erro na abertura do arquivo.\n");
 		exit(1);
 	}
-	
-	
 	//if();
 	while (fscanf(d, "%c", &norm[n])==1) {
 		fscanf(d, "%c", &norm[n]);
-		
-		
 		crip[n] = criptografar(norm[n]);
 		fprintf(f, "%c", crip[n]);
 		n++;	
