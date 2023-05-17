@@ -16,25 +16,25 @@ int main(void) {
 	int n = 0;
 	char norm[70];
 	char crip[70];
-	FILE* d = fopen("criptografar.txt", "r");
-	if (d == NULL) {
+	FILE* h = fopen("criptografar.txt", "r");
+	if (h == NULL) {
 		printf("Erro na abertura do arquivo.\n");
 		exit(1);
 	}
-	FILE* f = fopen("criptografado.txt", "w");
-	if (f == NULL) {
+	FILE* i = fopen("criptografado.txt", "w");
+	if (i == NULL) {
 		printf("Erro na abertura do arquivo.\n");
 		exit(1);
 	}
 	//if();
-	while (fscanf(d, "%c", &norm[n])==1) {
-		fscanf(d, "%c", &norm[n]);
+	while (fscanf(h, "%c", &norm[n])==1) {
+		fscanf(h, "%c", &norm[n]);
 		crip[n] = criptografar(norm[n]);
-		fprintf(f, "%c", crip[n]);
+		fprintf(i, "%c", crip[n]);
 		n++;	
 	}
 	printf("Arquivo criptografado.\n");
-	fclose(d);
-	fclose(f);
+	fclose(h);
+	fclose(i);
 	return 0;
 }
