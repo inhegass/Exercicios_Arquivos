@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char criptografar(char a) {
-	char b;
-	if (a != '\n') {
-		b = a + 3;
+char criptografar(char x) {
+	char l;
+	if ('a' <= x <= 'z' && 'A' <= x <= 'Z') {
+		l = x + 3;
 	}
 	else {
-		b = a;
+		l = x;
 	}
-	return b;
+	return l;
 }
 
 
@@ -27,11 +27,12 @@ int main(void) {
 		printf("Erro na abertura do arquivo.\n");
 		exit(1);
 	}
-	while (!feof(d)) {
-		fscanf(d, "%c", &norm[n]);
-		crip[n] = criptografar(norm[n]);
-		fprintf(f, "%c", crip[n]);
-		n++;	
+	while (!feof(d)) {	
+		if (fscanf(d, "%c", &norm[n]) == 1) {
+			crip[n] = criptografar(norm[n]);
+			fprintf(f, "%c", crip[n]);
+			n++;
+			}
 	}
 	printf("Arquivo criptografado.\n");
 	fclose(d);
